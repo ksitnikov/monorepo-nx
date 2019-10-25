@@ -22,7 +22,7 @@ const routes: Routes = [
       },
       {
         path: 'lazy',
-        loadChildren: () => import('')
+        loadChildren: () => import('../../../../libs/angular-core/src/lib/customers/customers.module').then(mod => mod.CustomersModule)
       },
     ]
   }
