@@ -21,7 +21,7 @@ https://nx.dev/angular/guides/monorepo-affected
  - `ng add @nrwl/angular --defaults`
  
 ## new project application
- - `ng g @nrwl/angular:application myapp`		--> Creates new application "myapp"
+ - `'ng g @nrwl/angular:application myapp'`		--> Creates new application "myapp"
  
 ## new project library
  - `ng g @nrwl/angular:lib ui`				--> Creates new library "ui"

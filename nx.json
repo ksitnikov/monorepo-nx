@@ -19,6 +19,12 @@
     },
     "angular-core": {
       "tags": []
+    },
+    "material-app-e2e": {
+      "tags": []
+    },
+    "material-app": {
+      "tags": []
     }
   }
 }
