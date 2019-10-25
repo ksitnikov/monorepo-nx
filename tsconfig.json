@@ -15,7 +15,12 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@monorepo-nx/angular-components": [
+        "libs/angular-components/src/index.ts"
+      ],
+      "@monorepo-nx/angular-core": ["libs/angular-core/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

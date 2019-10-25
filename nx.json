@@ -13,6 +13,12 @@
     },
     "components": {
       "tags": []
+    },
+    "angular-components": {
+      "tags": []
+    },
+    "angular-core": {
+      "tags": []
     }
   }
 }

@@ -25,7 +25,10 @@
               "apps/components/src/favicon.ico",
               "apps/components/src/assets"
             ],
-            "styles": ["apps/components/src/styles.scss"],
+            "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "apps/components/src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -84,7 +87,10 @@
               "apps/components/tsconfig.app.json",
               "apps/components/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!apps/components/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/components/**"
+            ]
           }
         },
         "test": {
@@ -118,9 +124,82 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": ["apps/components-e2e/tsconfig.e2e.json"],
-            "exclude": ["**/node_modules/**", "!apps/components-e2e/**"]
+            "tsConfig": [
+              "apps/components-e2e/tsconfig.e2e.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/components-e2e/**"
+            ]
           }
+        }
+      }
+    },
+    "angular-components": {
+      "projectType": "library",
+      "root": "libs/angular-components",
+      "sourceRoot": "libs/angular-components/src",
+      "prefix": "monorepo-nx",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/angular-components/tsconfig.lib.json",
+              "libs/angular-components/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/angular-components/**"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/angular-components/jest.config.js",
+            "tsConfig": "libs/angular-components/tsconfig.spec.json",
+            "setupFile": "libs/angular-components/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "angular-core": {
+      "projectType": "library",
+      "root": "libs/angular-core",
+      "sourceRoot": "libs/angular-core/src",
+      "prefix": "monorepo-nx",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/angular-core/tsconfig.lib.json",
+              "libs/angular-core/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/angular-core/**"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/angular-core/jest.config.js",
+            "tsConfig": "libs/angular-core/tsconfig.spec.json",
+            "setupFile": "libs/angular-core/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
         }
       }
     }
